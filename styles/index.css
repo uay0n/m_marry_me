@@ -253,6 +253,8 @@
     overflow-x: auto;
     overflow-y: hidden;
     flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box; scrollbar-width: none;
 }
 
 .story_item {
@@ -324,7 +326,7 @@
 .highlight_story::-webkit-scrollbar {
     display: none;
 }
-
-.highlight_story {
-    scrollbar-width: none;
+.insta_profile {
+    width: 100%;
+    overflow-x: hidden;
 }
