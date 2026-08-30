@@ -177,7 +177,43 @@
     padding: 3.5px;
     box-sizing: border-box;
 }
+/* --------------------------------------인스타 클릭 시 사진 뜨는 팝업 */
+.profile_photo_modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
 
+    background: rgba(0, 0, 0, 0.9);
+
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_photo_modal.active {
+    display: flex;
+}
+
+.profile_photo_modal img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.profile_photo_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    border: none;
+    background: none;
+
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+/* --------------------------------------인스타 클릭 시 사진 뜨는 팝업 */
 .insta_profile .profile_info_area .profile_img {
     width: 100%;
     height: 100%;
@@ -303,7 +339,7 @@
 .story_2023 .story_img {
     background-image: url("../image/2023photo.jpg");
 }
-
+/* ---------------------------------------하이라이트 사진 */
 /* New */
 .story_new {
     display: flex;
@@ -329,4 +365,67 @@
 .insta_profile {
     width: 100%;
     overflow-x: hidden;
+}
+.highlight_modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.95);
+}
+.highlight_modal.active {
+    display: flex;
+}
+.highlight_slides {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.highlight_slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight_slide.active {
+    display: flex;
+}
+
+.highlight_slide img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+}
+.highlight_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100001;
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+.highlight_progress {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    right: 10px;
+    z-index: 100000;
+    display: flex;
+    gap: 4px;
+}
+.highlight_progress span {
+    height: 3px;
+    flex: 1;
+    background: rgba(255,255,255,0.4);
+    border-radius: 5px;
+}
+.highlight_progress span.active {
+    background: #fff;
 }

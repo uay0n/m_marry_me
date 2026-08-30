@@ -40,3 +40,155 @@ document.querySelectorAll('.letter_modal').forEach(function (modal) {
     });
 
 });
+const highlightThumbs = document.querySelectorAll('.story_thumb[data-year]');
+const highlightModal = document.querySelector('.highlight_modal');
+const highlightSlides = document.querySelector('.highlight_slides');
+const highlightClose = document.querySelector('.highlight_close');
+const progressBars = document.querySelectorAll('.highlight_progress span');
+
+const highlightPhotos = {
+
+    "2026": [
+        "./image/full1.jpg",
+        "./image/full2.jpg",
+        "./image/full3.jpg",
+        "./image/full4.jpg",
+        "./image/full5.jpg"
+    ],
+
+    "2025": [
+        "./image/full1.jpg",
+        "./image/full2.jpg",
+        "./image/full3.jpg",
+        "./image/full4.jpg",
+        "./image/full5.jpg"
+    ],
+
+    "2024": [
+        "./image/full1.jpg",
+        "./image/full2.jpg",
+        "./image/full3.jpg",
+        "./image/full4.jpg",
+        "./image/full5.jpg"
+    ],
+
+    "2023": [
+        "./image/full1.jpg",
+        "./image/full2.jpg",
+        "./image/full3.jpg",
+        "./image/full4.jpg",
+        "./image/full5.jpg"
+    ]
+
+};
+console.log(highlightThumbs);
+let currentPhoto = 0;
+
+// 하이라이트 클릭
+highlightThumbs.forEach((thumb) => {
+
+    thumb.addEventListener('click', () => {
+
+        const year = thumb.dataset.year;
+        const photos = highlightPhotos[year];
+
+        // 기존 사진 삭제
+        highlightSlides.innerHTML = '';
+
+        // 첫 번째 사진부터 시작
+        currentPhoto = 0;
+
+        // 사진 5장 생성
+        photos.forEach((photo, index) => {
+
+            const slide = document.createElement('div');
+            slide.className = 'highlight_slide';
+
+            // 첫 번째 사진만 보이게
+            if (index === 0) {
+                slide.classList.add('active');
+            }
+
+            const img = document.createElement('img');
+            img.src = photo;
+
+            slide.appendChild(img);
+            highlightSlides.appendChild(slide);
+
+        });
+
+        // 모달 열기
+        highlightModal.classList.add('active');
+
+        document.body.style.overflow = 'hidden';
+
+        // 진행바 첫 번째 활성화
+        progressBars.forEach((bar, index) => {
+            bar.classList.toggle('active', index === 0);
+        });
+
+    });
+
+});
+
+
+// 사진 화면을 클릭하면 다음 사진
+highlightSlides.addEventListener('click', () => {
+
+    const slides = highlightSlides.querySelectorAll('.highlight_slide');
+
+    if (slides.length === 0) return;
+
+    // 현재 사진 숨기기
+    slides[currentPhoto].classList.remove('active');
+
+    // 다음 사진
+    currentPhoto++;
+
+    // 마지막 사진이면 첫 번째로
+    if (currentPhoto >= slides.length) {
+        currentPhoto = 0;
+    }
+
+    // 다음 사진 보여주기
+    slides[currentPhoto].classList.add('active');
+
+    // 진행바 변경
+    progressBars.forEach((bar, index) => {
+        bar.classList.toggle('active', index === currentPhoto);
+    });
+
+});
+
+
+// X 버튼으로 닫기
+highlightClose.addEventListener('click', () => {
+
+    highlightModal.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+});
+
+// 프로필 사진
+const profileImg = document.querySelector('.profile_img');
+const profilePhotoModal = document.querySelector('.profile_photo_modal');
+const profilePhotoClose = document.querySelector('.profile_photo_close');
+
+profileImg.addEventListener('click', () => {
+
+    profilePhotoModal.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+
+});
+
+
+// 프로필 사진 닫기
+profilePhotoClose.addEventListener('click', () => {
+
+    profilePhotoModal.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+});
