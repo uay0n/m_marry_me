@@ -1,0 +1,94 @@
+/* 모바일 청첩장 ccs */
+/* --------------------------------------------------(메인/사진 부분)1행 */
+/* 첫 번째 메인 섹션 */
+.first {
+    background: url(../image/main_bg.jpg); background-size: cover; background-position: center;
+    width: 100%; min-height: 100vh;
+    display: flex; flex-flow: column nowrap; align-items: center;
+    justify-content: center; padding: 50px;
+}
+
+/* 메인 상단 영역 */
+.first .top {
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); border-radius: 20px; width: 100%; max-width: 380px;
+    height: auto; min-height: 500px; padding: 20px 0 20px 0; display: flex; flex-flow: column nowrap;
+    justify-content: space-between; align-items: center;
+}
+.first .top * {color: #fff;} /* 안에 들어가는 색 모두 흰색 */
+
+/* 상단 장소, 날짜, 시간 정보 */
+.first .information {
+    display: flex; justify-content: space-between; flex-flow: row nowrap;
+    width: 100%; padding: 0 50px 0 50px;
+}
+.first .information * {letter-spacing: -1.0px;}
+.first .information .place {}
+.first .information .date {}
+.first .information .time {}
+
+/* 이름 및 하트/명언 영역 */
+.first .name_heart {
+    
+}
+
+/* 이름 영역 */
+.first .name {
+    
+}
+.first .name .marry_info {
+    font-size: 0.5rem; padding: 2px 5px; border: 0.5px solid #fff;
+    border-radius: 20px; display: inline-block; margin-bottom: 10px;
+}
+.first .name p span {font-weight: 800;}
+.first .name .g_b {display: flex; gap: 10px;}
+.first .name .groom_name {
+    display: flex; flex-flow: column; align-items: center;
+}
+.first .name .groom_name .groom {font-size: 1.25rem;}
+.first .name .groom_name .g_name {font-size: 2.25rem; font-weight: 700;}
+.first .name .bride_name {
+    display: flex; flex-flow: column; align-items: center;
+}
+.first .name .bride_name .bride {font-size: 1.25rem;}
+.first .name .bride_name .b_name {font-size: 2.25rem; font-weight: 700;}
+
+/* 하트 및 명언 영역 */
+.first .heart {
+    
+}
+.first .heart .heart_five {
+    
+}
+.first .heart .famous_saying {
+    
+}
+
+/* 상단 하단 아이콘/단어 영역 */
+.first .word {
+    display: flex; justify-content: space-between; flex-flow: row nowrap;
+    width: 100%; padding: 0 50px 0 50px;
+}
+.first .word .love {
+    
+}
+.first .word .together {
+    
+}
+.first .word .forever {
+    
+}
+
+/* 하단 버튼 부분 */
+.first .bottom {
+    
+}
+.first .bottom .groom_letter {
+    
+}
+.first .bottom .flower {
+    
+}
+.first .bottom .bride_letter {
+    
+}
