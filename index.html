@@ -197,14 +197,23 @@
         </div>
     </div>
     <!-- 6. 하단 사진 갤러리 그리드 (6분할 앨범) -->
-<!--     <div class="photo_grid">
-        <div class="grid_item"><img src="./image/full1.jpg" alt="웨딩사진1"></div>
-        <div class="grid_item"><img src="./image/full2.jpg" alt="웨딩사진2"></div>
-        <div class="grid_item"><img src="./image/full3.jpg" alt="웨딩사진3"></div>
-        <div class="grid_item"><img src="./image/full4.jpg" alt="웨딩사진4"></div>
-        <div class="grid_item"><img src="./image/full5.jpg" alt="웨딩사진5"></div>
-        <div class="grid_item"><img src="./image/full6.jpg" alt="웨딩사진6"></div>
-    </div> -->
+    <div class="photo_grid">
+        <div class="top">
+            <div class="grid_item"><img src="./image/full1.jpg" alt="웨딩사진1"></div>
+            <div class="grid_item"><img src="./image/full2.jpg" alt="웨딩사진2"></div>
+            <div class="grid_item"><img src="./image/full3.jpg" alt="웨딩사진3"></div>
+        </div>
+        <div class="bottom">
+            <div class="grid_item"><img src="./image/full4.jpg" alt="웨딩사진4"></div>
+            <div class="grid_item"><img src="./image/full5.jpg" alt="웨딩사진5"></div>
+            <div class="grid_item"><img src="./image/full6.jpg" alt="웨딩사진6"></div>
+        </div>
+    </div>
+    <!-- 사진 크게 보기 팝업 모달 -->
+    <div id="imageModal" class="modal">
+        <span class="close_btn">&times;</span>
+        <img class="modal_content" id="modalImg" alt="확대 사진">
+    </div>
 </section>
 </body>
 </html>

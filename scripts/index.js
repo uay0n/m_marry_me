@@ -192,3 +192,32 @@ profilePhotoClose.addEventListener('click', () => {
     document.body.style.overflow = '';
 
 });
+// 갤러리 사진 클릭 시 팝업 열기
+// 갤러리 사진 클릭 시 팝업 열기
+const gridImgs = document.querySelectorAll('.photo_grid .grid_item img');
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const closeBtn = document.querySelector('.modal .close_btn');
+
+gridImgs.forEach(img => {
+    img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+    });
+});
+
+// 닫기 버튼 누르면 닫힘
+if(closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+}
+
+// 배경 누르면 닫힘
+if(modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}

@@ -3,7 +3,7 @@
 /* 첫 번째 메인 섹션 */
 .first {
     background: url(../image/main_bg.jpg); background-size: cover; background-position: center;
-    width: 100%; min-height: 100vh;
+    width: 100%; min-height: 100 dvh;
     display: flex; flex-flow: column nowrap; align-items: center;
     justify-content: center; padding: 50px; gap: 10px;
 }
@@ -291,6 +291,7 @@
     flex-wrap: nowrap;
     width: 100%;
     box-sizing: border-box; scrollbar-width: none;
+    padding: 20px 15px;
 }
 
 .story_item {
@@ -428,4 +429,69 @@
 }
 .highlight_progress span.active {
     background: #fff;
+}
+
+/* 전체 갤러리 영역 */
+/* 6. 하단 사진 갤러리 그리드 (4:3 비율 적용) */
+.photo_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; 
+    background: #dbdbdb; 
+}
+.photo_grid .top,
+.photo_grid .bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2px; 
+}
+.grid_item {
+    aspect-ratio: 3 / 4; /* 4:3 비율 설정 */
+    background: #eee;
+    overflow: hidden;
+    cursor: pointer;
+}
+.grid_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s;
+}
+.grid_item img:hover {
+    transform: scale(1.03);
+}
+
+/* 팝업 모달 스타일 */
+/* 팝업 모달 스타일 */
+.modal {
+    display: none; /* 평소엔 숨김 */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* 🌟 기존 편지/프로필 모달과 똑같은 원형 배경의 엑스 버튼 스타일로 변경 */
+.modal .close_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: none; /* 배경 없음 */
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
 }
