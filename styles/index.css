@@ -37,7 +37,7 @@
     
 }
 .first .name .marry_info {
-    font-size: 0.5rem; padding: 2px 5px; border: 0.5px solid #fff;
+    font-size: 0.5em; padding: 2px 5px; border: 0.5px solid #fff;
     border-radius: 20px; display: inline-block; margin-bottom: 10px;
 }
 .first .name p span {font-weight: 800;}
@@ -50,7 +50,7 @@
 .first .name .bride_name {
     display: flex; flex-flow: column; align-items: center;
 }
-.first .name .bride_name .bride {font-size: 1.25rem;}
+.first .name .bride_name .bride {font-size: 1.25em;}
 .first .name .bride_name .b_name {font-size: 2.25rem; font-weight: 700;}
 
 /* 하트 및 명언 영역 */
@@ -66,8 +66,7 @@
 
 /* 상단 하단 아이콘/단어 영역 */
 .first .word {
-    display: flex; justify-content: space-between; flex-flow: row nowrap;
-    width: 100%; padding: 0 50px 0 50px;
+    
 }
 .first .word .love {
     
