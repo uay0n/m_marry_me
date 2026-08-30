@@ -157,3 +157,163 @@
 
     z-index: 10000;
 }
+
+/* ----------------------------------------2열 */
+/* 4. 프로필 버튼 영역 (신랑소개 / 신부소개 / 하트) */
+.insta_profile .status_bar {
+    display: flex; flex-flow: row nowrap;
+    padding: 20px 40px; justify-content: space-between;
+}
+.insta_profile .status_bar .time_area span {font-size: 15px; font-weight: 700;}
+.insta_profile .profile_info_area {/* 프로필 + 이름부분 */
+    display: flex; align-items: center;
+    padding: 30px 0 0 10px; gap: 20px;
+} 
+.insta_profile .profile_info_area .profile_img_box {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 3.5px;
+    box-sizing: border-box;
+}
+
+.insta_profile .profile_info_area .profile_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+
+    background: url('../image/instabtn.jpg');
+    background-size: 200%; /* 확대 */
+    background-position: center  60%; /* 위치 조정 */
+    background-repeat: no-repeat; 
+}
+.insta_profile .profile_info_area .profile_stats .name_item {
+    font-size: 15px; margin-bottom: 10px;
+}
+.insta_profile .profile_info_area .profile_stats .bottom {
+    font-size: 15px;
+    display: flex; flex-flow: row; gap: 20px;
+}
+.insta_profile .profile_info_area .profile_stats .bottom .stat_item {
+    display: flex; flex-flow: column; justify-content: center; align-items: center;
+    gap: 2px;
+}
+.insta_profile .profile_info_area .profile_stats .bottom .stat_item .num {font-weight: 700;}
+.insta_profile .status_bar .status_icons {display: flex; gap: 5px;}
+.insta_profile .profile_header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px;
+}
+.insta_profile .profile_bio {padding: 10px 20px;}
+.insta_profile .profile_bio p {font-size: 15px;}
+.insta_profile .profile_buttons {
+    display: flex; padding: 0 20px; gap: 5px; height: 30px;
+}
+.insta_profile .profile_header h1 {font-size: 20px; font-weight: 700;}
+/* 신랑소개, 신부소개 버튼 */
+.btn_groom, .btn_bride {
+    flex: 1; /* 두 버튼이 남은 공간을 반반씩 공평하게 차지 */
+    height: 32px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn_groom { background: #385e33; color: #fff; } /* 초록색 */
+.btn_bride { background: #f4c430; color: #fff; } /* 노란색 */
+
+/* 맨 오른쪽 하트 버튼 상자 스타일 */
+.profile_buttons .btn_heart, 
+.profile_buttons p {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px; /* 찌그러지지 않고 정사각형 유지 */
+    background: #efefef;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+/* 5행------------------------------------------------- */
+.highlight_story {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.story_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+/* 바깥쪽 회색 테두리 */
+.story_thumb {
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+    border: 1px solid #d8d8d8;
+    border-radius: 50%;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+/* 안쪽 흰색 테두리 + 사진 */
+.story_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 사진 */
+.story_2026 .story_img {
+    background-image: url("../image/2026photo.jpg");
+}
+
+.story_2025 .story_img {
+    background-image: url("../image/2025photo.jpg");
+}
+
+.story_2024 .story_img {
+    background-image: url("../image/2024photo.JPG");
+}
+
+.story_2023 .story_img {
+    background-image: url("../image/2023photo.jpg");
+}
+
+/* New */
+.story_new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story_new span {
+    font-size: 27px;
+    font-weight: 300;
+    color: #777;
+}
+
+/* 이름 */
+.story_name {
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+}
