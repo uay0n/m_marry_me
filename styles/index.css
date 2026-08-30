@@ -22,7 +22,7 @@
     display: flex; justify-content: space-between; flex-flow: row nowrap;
     width: 100%; padding: 0 50px 0 50px;
 }
-.first .information * {letter-spacing: -1.0px;}
+.first .information * {letter-spacing: -1.0px; font-size: 0.625rem;}
 .first .information .place {}
 .first .information .date {}
 .first .information .time {}
