@@ -22,7 +22,7 @@
     display: flex; justify-content: space-between; flex-flow: row nowrap;
     width: 100%; padding: 0 50px 0 50px; align-items: center;
 }
-.first .information * {letter-spacing: -1.0px; font-size: 12px; white-space: nowrap;}
+.first .information * {letter-spacing: -1.0px; font-size: 10px; white-space: nowrap;}
 .first .information .place {}
 .first .information .date {}
 .first .information .time {}
@@ -72,7 +72,7 @@
     display: flex; justify-content: space-between; flex-flow: row nowrap;
     width: 100%; padding: 0 50px 0 50px;
 }
-.first .word * {letter-spacing: -1.0px; font-size: 12px;}
+.first .word * {letter-spacing: -1.0px; font-size: 10px;}
 .first .word .love {
     
 }
