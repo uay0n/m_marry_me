@@ -20,7 +20,7 @@
 /* 상단 장소, 날짜, 시간 정보 */
 .first .information {
     display: flex; justify-content: space-between; flex-flow: row nowrap;
-    width: 100%; padding: 0 50px 0 50px; align-items: center;
+    width: 100%; padding: 0 50px 0 50px; align-items: center; 
 }
 .first .information * {letter-spacing: -1.0px; font-size: 10px; white-space: nowrap;}
 .first .information .place {}
