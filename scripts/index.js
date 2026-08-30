@@ -221,3 +221,76 @@ if(modal) {
         }
     });
 }
+//신랑, 신부 소개글
+document.addEventListener("DOMContentLoaded", function () {
+    const groomBtn = document.querySelector(".btn_groom");
+    const brideBtn = document.querySelector(".btn_bride");
+    
+    const groomModal = document.getElementById("groomModal");
+    const brideModal = document.getElementById("brideModal");
+    
+    // 닫기 버튼 클래스를 .close_btn으로 변경
+    const closeBtns = document.querySelectorAll(".close_btn");
+
+    if (groomBtn && groomModal) {
+        groomBtn.addEventListener("click", function () {
+            groomModal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    if (brideBtn && brideModal) {
+        brideBtn.addEventListener("click", function () {
+            brideModal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    closeBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            if (groomModal) groomModal.style.display = "none";
+            if (brideModal) brideModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === groomModal) {
+            groomModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        if (event.target === brideModal) {
+            brideModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+});
+// 지도 클릭 시 확대
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("mapModal");
+    const img = document.querySelector(".map_img_popup");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".modal_close");
+
+    // 지도 사진을 터치/클릭하면 모달 열기
+    if (img) {
+        img.addEventListener("click", function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+        });
+    }
+
+    // X 버튼 누르면 닫기
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+    }
+
+    // 어두운 배경 영역을 눌러도 닫기
+    modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});

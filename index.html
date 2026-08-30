@@ -20,7 +20,7 @@
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
-    <section class="main first"> <!-- main 중복사용 예정, 첫번째 문단 -->
+    <section class="first"> <!--  첫번째 문단 -->
         <div class="top"> <!-- 메인상단 부분 -->
             <div class="information"> <!-- 상단 장소, 날짜, 시간 정보 전달 -->
                 <p class="place">빌라드마리</p>
@@ -43,11 +43,11 @@
                 </div><!-- e:name -->
                 <div class="heart">
                     <div class="heart_five"> <!-- 하트 -->
-                        <img src="./image/heart1.svg" alt="하트">
-                        <img src="./image/heart2.svg" alt="하트">
-                        <img src="./image/heart3.svg" alt="하트">
-                        <img src="./image/heart4.svg" alt="하트">
-                        <img src="./image/heart5.svg" alt="하트">
+                        <img src="./image/heart1.svg" alt="">
+                        <img src="./image/heart2.svg" alt="">
+                        <img src="./image/heart3.svg" alt="">
+                        <img src="./image/heart4.svg" alt="">
+                        <img src="./image/heart5.svg" alt="">
                     </div><!-- e:heart_five -->
                     <p class="famous_saying"> <!-- 꾸미기용 명언 -->
                         Somewhere between <span>two hearts,</span><br>
@@ -74,14 +74,14 @@
     <div class="letter_modal groom_modal">
         <div class="letter_content">
             <button type="button" class="letter_close">×</button>
-            <img src="./image/letter1.png" alt="태민의 편지">
+            <img src="./image/letter1.png" alt="">
         </div>
     </div>
     <!-- 신부 편지 -->
     <div class="letter_modal bride_modal">
         <div class="letter_content">
             <button type="button" class="letter_close">×</button>
-            <img src="./image/letter2.png" alt="아연의 편지">
+            <img src="./image/letter2.png" alt="">
         </div>
     </section><!-- e:main first -->
     <section class="main insta_profile">
@@ -145,6 +145,21 @@
         <button type="button" class="btn_bride">신부소개</button>
         <p>❤</p>
     </div>
+
+    <div id="groomModal" class="intro_modal">
+        <div class="intro_modal_content">
+            <button type="button" class="close_btn">&times;</button>
+            <img src="./image/groom_intro.png" alt="">
+        </div>
+    </div>
+
+    <!-- 신부 소개 모달 -->
+    <div id="brideModal" class="intro_modal">
+        <div class="intro_modal_content">
+            <button type="button" class="close_btn">&times;</button>
+            <img src="./image/brider_intro.png" alt="">
+        </div>
+    </div>
     <!-- 5. 스토리 하이라이트 (원형 아이콘 목록) -->
     <div class="highlight_story">
 
@@ -199,20 +214,86 @@
     <!-- 6. 하단 사진 갤러리 그리드 (6분할 앨범) -->
     <div class="photo_grid">
         <div class="top">
-            <div class="grid_item"><img src="./image/full1.jpg" alt="웨딩사진1"></div>
-            <div class="grid_item"><img src="./image/full2.jpg" alt="웨딩사진2"></div>
-            <div class="grid_item"><img src="./image/full3.jpg" alt="웨딩사진3"></div>
+            <div class="grid_item"><img src="./image/full1.jpg" alt=""></div>
+            <div class="grid_item"><img src="./image/full2.jpg" alt=""></div>
+            <div class="grid_item"><img src="./image/full3.jpg" alt=""></div>
         </div>
         <div class="bottom">
-            <div class="grid_item"><img src="./image/full4.jpg" alt="웨딩사진4"></div>
-            <div class="grid_item"><img src="./image/full5.jpg" alt="웨딩사진5"></div>
-            <div class="grid_item"><img src="./image/full6.jpg" alt="웨딩사진6"></div>
+            <div class="grid_item"><img src="./image/full4.jpg" alt=""></div>
+            <div class="grid_item"><img src="./image/full5.jpg" alt=""></div>
+            <div class="grid_item"><img src="./image/full6.jpg" alt=""></div>
         </div>
     </div>
     <!-- 사진 크게 보기 팝업 모달 -->
     <div id="imageModal" class="modal">
         <span class="close_btn">&times;</span>
         <img class="modal_content" id="modalImg" alt="확대 사진">
+    </div>
+</section>
+<section class="map">
+    <div class="container">
+        <h3>오시는 길</h3>
+        <p><img src="./image/map.png" alt="map" class="map_img_popup"></p>
+        <div class="name_add">
+            <p class="hall_name">빌라드마리웨딩홀</p>
+            <p class="address">인천광역시 부평구 경원대로 1404(부평동 185-30)</p>
+        </div>
+        <div class="subway">
+            <div class="in_use">
+                <img src="./image/subway.svg" alt="">
+                <span>지하철 사용 시</span>
+            </div>
+            <div class="way">
+                <p class="title">1호선 부평역 하차</p>
+                <p class="content">• 북부광장 출구 도보 2분거리 (택시정류장에서 우측방향 12층 건물)</p>
+            </div>
+            <div class="way">
+                <p class="title">인천지하철 부평역 하차</p>
+                <p class="content">• 지하상가 11번 출구로 나오시면 오른편에 있습니다. (노벨약국, 청아보석 방향)</p>
+            </div>
+        </div> <!-- e:subway -->
+        <div class="bus">
+            <div class="in_use">
+                <img src="./image/bus.svg" alt="">
+                <span>버스 사용 시</span>
+            </div>
+            <div class="way">
+                <p class="content">• 88(경기버스), 11, 12, 43, 45, 46, 47, 302, 302B, 9500(시외버스)</p>
+            </div>
+        </div> <!-- e:bus -->
+        <div class="parking">
+            <div class="in_use">
+                <img src="./image/parking.svg" alt="">
+                <span>주차장 사용 시</span>
+            </div>
+            <div class="way">
+                <p class="content">• 지하 2~4층, 지상주차장(2시간 무료),500대 동시 주차 11층 연회장에서 차량번호 등록 후 출차하세요!</p>
+            </div>
+        </div> <!-- e:bus -->
+        <div class="wap_btns">
+            <!-- 네이버 지도 버튼 -->
+            <a href="https://naver.me/F3T82wZo" target="_blank" rel="noopener noreferrer" class="map_btn">
+                <img src="./image/naver.svg" alt="네이버" class="btn_icon">
+                <span>네이버지도</span>
+            </a>
+    
+            <!-- 카카오 지도 버튼 -->
+            <a href="https://kko.to/rM_B8oM8Hf" target="_blank" rel="noopener noreferrer" class="map_btn">
+                <img src="./image/kakao.svg" alt="카카오" class="btn_icon">
+                <span>카카오지도</span>
+            </a>
+    
+            <!-- 구글 지도 버튼 -->
+            <a href="https://maps.app.goo.gl/VXN23CwdixTpHhrR6" target="_blank" rel="noopener noreferrer" class="map_btn">
+                <img src="./image/google.svg" alt="구글" class="btn_icon">
+                <span>구글지도</span>
+            </a>
+        </div>
+        <!-- 모달 추가 -->
+        <div id="mapModal" class="modal_wrap">
+            <span class="modal_close">&times;</span>
+            <img class="modal_content" id="modalImg" src="./image/map.png" alt="map">
+        </div>
     </div>
 </section>
 </body>

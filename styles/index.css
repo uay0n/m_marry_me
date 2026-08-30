@@ -62,6 +62,36 @@
 .first .heart .heart_five {
     display: flex; gap: 0;
 }
+/* 애니메이션 */
+/* 1. 하트가 나타났다 사라지며 반복되는 애니메이션 */
+@keyframes heartLoop {
+    0%, 15% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    30%, 85% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* 2. heart_five 안에 있는 이미지(하트)들에 애니메이션 적용 */
+.first .heart .heart_five img {
+    /* 전체 반복 시간은 3.5초 정도로 넉넉하게 잡습니다 */
+    animation: heartLoop 3.5s ease-in-out infinite;
+    opacity: 0; 
+}
+
+/* 3. 1번부터 5번까지 차례대로 켜지도록 시간차(딜레이) 주기 */
+.first .heart .heart_five img:nth-child(1) { animation-delay: 0.2s; }
+.first .heart .heart_five img:nth-child(2) { animation-delay: 0.5s; }
+.first .heart .heart_five img:nth-child(3) { animation-delay: 0.8s; }
+.first .heart .heart_five img:nth-child(4) { animation-delay: 1.1s; }
+.first .heart .heart_five img:nth-child(5) { animation-delay: 1.4s; }
 .first .heart .famous_saying {
     font-size: 8px; border-left: 1px solid #fff; padding: 0 10px;
     line-height: 12px;
@@ -101,22 +131,37 @@
 .first .bottom .bride_letter {
     border-radius: 20px; border: 1px solid #fff;
     padding: 5px 10px;
-}/* ----------------------------------------------------------------- */
+}
+/* 1. 버튼이 커졌다 작아지며 숨 쉬는 애니메이션 정의 */
+@keyframes letterBreath {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04); /* 중간에 살짝 커짐 (원하시면 1.03~1.05 사이로 조절 가능) */
+    }
+}
+
+/* 2. 신랑/신부 편지 버튼 클래스에 애니메이션 적용 */
+/* 만약 버튼 클래스 이름이 다르다면 아래 선택자만 본인 코드에 맞게 수정해 주세요! */
+.groom_letter, .bride_letter {
+    animation: letterBreath 2s ease-in-out infinite;
+    transform-origin: center;
+}
+/* ----------------------------------------------------------------- */
 /* 편지 모달 */
 .letter_modal {
     position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(0, 0, 0, 0.7);
-
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* 또는 100dvh */
+    background: rgba(0, 0, 0, 0.8); /* 어두운 그림자 배경을 화면 전체에 꽉 채움 */
+    
     display: none;
     justify-content: center;
     align-items: center;
-
-    padding: 40px 20px;
-    z-index: 9999;
+    z-index: 99999; /* 다른 요소들보다 맨 위에 오도록 설정 */
 }
 
 /* 편지 */
@@ -262,7 +307,49 @@
 }
 .btn_groom { background: #385e33; color: #fff; } /* 초록색 */
 .btn_bride { background: #f4c430; color: #fff; } /* 노란색 */
+/* 소개 모달 전체 배경 */
+.intro_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
 
+/* 모달 내부 콘텐츠 박스 */
+.intro_modal_content {
+    position: relative;
+    max-width: 90%;
+    max-height: 85vh;
+}
+
+/* 모달 안의 소개 이미지 */
+.intro_modal_content img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+    display: block;
+    object-fit: contain;
+}
+
+/* 기존에 쓰시던 X 닫기 버튼 스타일 */
+.intro_modal_content .close_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: none; /* 배경 없음 */
+    color: #000;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 10;
+}
 /* 맨 오른쪽 하트 버튼 상자 스타일 */
 .profile_buttons .btn_heart, 
 .profile_buttons p {
@@ -493,5 +580,109 @@
     background: none; /* 배경 없음 */
     color: #fff;
     font-size: 35px;
+    cursor: pointer;
+}
+/* ------------------------------------------------3행 오시는 길 */
+.map {
+    position: relative; /* 가상요소를 깔기 위한 기준점 */
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden; /* 블러 때문에 밖으로 튀어나오는 부분 자르기 */
+}
+
+/* 배경 이미지 + 블러 + 어두운 필터를 담당하는 가상요소 */
+.map::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* 블러가 엣지에서 깨지는 것 방지 */
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/wap_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* 여기에 주는 블러는 오직 배경에만 적용됨! */
+    z-index: -1; /* 글씨가 배경 뒤로 숨지 않도록 맨 밑으로 내리기 */
+}
+.map .container {
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); width: 100%;
+    position: relative; /* 가상요소를 깔기 위한 기준점 */
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden; /* 블러 때문에 밖으로 튀어나오는 부분 자르기 */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px; gap: 20px;
+}
+.map * {color: #fff; font-size: 12px;}
+.map h3 {font-size: 15px; font-weight: 500; border-radius: 50px; border: 1px solid #fff; padding: 5px 10px;}
+.map p {width: 100%;}
+.map p img {width: 100%;}
+.map .hall_name {font-weight: 700; text-align: center;}
+.map .address {margin-bottom: 20px; text-align: center;}
+.map .subway {border: 0.5px solid #fff; width: 100%; padding: 5px;}
+.map .subway .in_use {display: flex; justify-content: center; align-items: center; gap: 5px;}
+.map .subway .in_use span {font-weight: 700;}
+.map .subway .way {padding: 5px 20px;}
+.map .subway .way .title {font-weight: 700; margin-bottom: 5px;}
+.map .subway .way .content {}
+.map .bus {border: 0.5px solid #fff; width: 100%; padding: 5px;}
+.map .bus .in_use {display: flex; justify-content: center; align-items: center; gap: 5px;}
+.map .bus .in_use span {font-weight: 700;}
+.map .bus .way {padding: 5px 20px;}
+.map .bus .way .content {}
+.map .parking {border: 0.5px solid #fff; width: 100%; padding: 5px;}
+.map .parking .in_use {display: flex; justify-content: center; align-items: center; gap: 5px;}
+.map .parking .in_use span {font-weight: 700;}
+.map .parking .way {padding: 5px 20px;}
+.map .parking .way .content {line-height: 1.5;}
+.map .wap_btns {display: flex; gap: 10px;}
+.map .wap_btns .map_btn {
+    padding: 5px 10px; border-radius: 20px; border: 0.5px solid #fff; display: flex; gap: 5px; justify-content: center; align-items: center;
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+}
+.map .wap_btns .map_btn .btn_icon {}
+.map .wap_btns .map_btn span {}
+/* 지도 사진 터치 가능하게 커서만 지정 */
+.map p img.map_img_popup {
+    cursor: pointer;
+}
+
+/* 모달 전체 배경 */
+.modal_wrap {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달창 안의 확대된 이미지 */
+.modal_content {
+    width: 95%; /* 모바일 화면 가로에 여유를 덜 두고 꽉 차게 */
+    max-width: 1000px; /* 너무 퍼지는 것 방지 (원하시면 더 늘려도 됩니다) */
+    height: auto;
+    max-height: 90vh; /* 세로도 화면 높이에 맞춰 꽉 차게 */
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* 닫기 버튼 */
+.modal_close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
 }
