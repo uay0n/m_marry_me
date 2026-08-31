@@ -224,52 +224,51 @@ body {
 /* 편지 박스 가로 폭 꽉 채우기 */
 /* 편지 모달 배경 */
 /* 1. 배경 모달은 브라우저 전체를 꽉 채우게 복구 */
+/* 편지 모달 전체 (애니메이션 밖으로 나왔으니 완벽히 덮습니다) */
 .letter_modal {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100dvh;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
-    box-sizing: border-box;
-    padding: 20px;
+    z-index: 999999; /* 제일 위로! */
 }
 
-/* 2. 편지 박스는 작아지지 않게 가로 폭을 시원하게 키움 */
+/* 편지 박스 */
 .letter_content {
     position: relative;
-    width: 95%; /* 모바일 화면 기준 양옆에 딱 붙을 정도로 넓힘 */
-    max-width: 460px; /* 너무 퍼지지 않으면서 시원하게 꽉 차는 크기 */
-    height: auto;
-    max-height: 85dvh;
+    width: 90%;
+    max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
 }
 
+/* 편지 이미지 */
 .letter_content img {
     width: 100%;
     height: auto;
     max-height: 85dvh;
-    display: block;
     object-fit: contain;
+    display: block;
     border-radius: 8px;
 }
 
-/* 3. 닫기 버튼 */
+/* 닫기 버튼 */
 .letter_close {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: -40px; /* 이미지 바깥 위쪽에 깔끔하게 배치 */
+    right: 0;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
     font-size: 20px;
     line-height: 32px;
