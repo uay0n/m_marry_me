@@ -882,15 +882,19 @@ body {
     font-family: 'Courier Prime', monospace;
     font-weight: 400;
 }
-.music_btn {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    background: rgba(0,0,0,0.3);
-    color: #fff;
-    z-index: 9998;
+.music_btn{
+position:fixed;
+right:calc(50% - 190px);
+bottom:20px;
+width:45px;
+height:45px;
+border:1px solid #fff;
+border-radius:50%;
+background:rgba(0,0,0,0.5);
+color:#fff;
+font-size:18px;
+z-index:999999;
+display:flex;
+justify-content:center;
+align-items:center;
 }
