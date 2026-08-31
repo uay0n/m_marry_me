@@ -1,5 +1,28 @@
 /* 모바일 청첩장 ccs */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+/* ------------------------------ */
+/* 전체 바깥쪽 배경 (PC에서 볼 때 양옆 빈 공간의 색상) */
+body {
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* 모바일 청첩장 본체를 감싸는 고정 박스 (PC에서는 스마트폰 사이즈, 모바일에서는 꽉 참) */
+.mobile-container {
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
 /* --------------------------------------------------(메인/사진 부분)1행 */
 /* 첫 번째 메인 섹션 */
 .first {
@@ -183,57 +206,54 @@
     transform-origin: center;
 }
 /* ----------------------------------------------------------------- */
-/* 편지 모달 */
+/* 편지 모달 (화면 전체를 덮되, 박스 안에서 뜨게 하려면 position을 absolute나 fixed로 조절) */
 .letter_modal {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    background: rgba(0, 0, 0, 0.9); /* 배경 더 어둡게 꽉 채우기 */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 99999;
 }
 
-/* 편지 박스 화면 전체 꽉 채우기 */
+/* 편지 박스 크기 제한 (너무 대빵만하게 커지지 않도록 max-width 지정) */
 .letter_content {
     position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+    width: 90%;
+    max-width: 400px; /* 모바일 컨테이너 크기에 딱 맞춤 */
+    height: auto;
+    max-height: 85vh;
 }
 
-/* 편지 이미지 화면 가득 채우기 (찌그러짐 방지하며 꽉 채움) */
+/* 편지 이미지 찌그러짐 방지 */
 .letter_content img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* 핵심: 여백 없이 화면에 꽉 채우기 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* cover 대신 contain을 써야 이미지가 잘리거나 대빵만해지지 않음 */
+    border-radius: 8px;
 }
-/* 닫기 버튼 */
+
+/* 닫기 버튼 위치 조정 */
 .letter_close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-
+    top: -40px; /* 이미지 바깥쪽 위로 빼기 */
+    right: 0;
     width: 32px;
     height: 32px;
-
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
-
+    background: rgba(255, 255, 255, 0.3);
     color: #fff;
     font-size: 24px;
     line-height: 32px;
     text-align: center;
-
-    z-index: 10000;
+    cursor: pointer;
+    z-index: 100000;
 }
-
 /* ----------------------------------------2열 */
 /* 4. 프로필 버튼 영역 (신랑소개 / 신부소개 / 하트) */
 .insta_profile .status_bar {
@@ -558,14 +578,14 @@
 .photo_grid {
     display: flex;
     flex-direction: column;
-    gap: 2px; 
+    gap: 0px; 
     background: #dbdbdb; 
 }
 .photo_grid .top,
 .photo_grid .bottom {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 2px; 
+    gap: 0px; 
 }
 .grid_item {
     aspect-ratio: 3 / 4; /* 4:3 비율 설정 */
@@ -619,38 +639,48 @@
 }
 /* ------------------------------------------------3행 오시는 길 */
 .map {
-    position: relative; /* 가상요소를 깔기 위한 기준점 */
+    position: relative;
     width: 100%;
     min-height: 100dvh;
-    overflow: hidden; /* 블러 때문에 밖으로 튀어나오는 부분 자르기 */
+    overflow: hidden;
+    z-index: 0;
 }
-
-/* 배경 이미지 + 블러 + 어두운 필터를 담당하는 가상요소 */
+.map .map_img_wrap {
+    width: 100%;
+}
+.map .map_img_wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
 .map::before {
     content: "";
     position: absolute;
-    top: -10px; /* 블러가 엣지에서 깨지는 것 방지 */
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/wap_bg.jpg);
+    inset: -10px;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/wap_bg.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(5px); /* 여기에 주는 블러는 오직 배경에만 적용됨! */
-    z-index: -1; /* 글씨가 배경 뒤로 숨지 않도록 맨 밑으로 내리기 */
+    filter: blur(5px);
+    z-index: -1;
 }
+
 .map .container {
-    background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); width: 100%;
-    position: relative; /* 가상요소를 깔기 위한 기준점 */
+    position: relative;
+    z-index: 1;
     width: 100%;
+    /* min-height와 justify-content 수정 */
+    height: auto; 
     min-height: 100dvh;
-    overflow: hidden; /* 블러 때문에 밖으로 튀어나오는 부분 자르기 */
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: flex-start; /* 핵심: 위에서부터 차곡차곡 쌓이게 변경 */
     align-items: center;
-    padding: 20px 15px; gap: 20px;
+    padding: 40px 15px 60px 15px; /* 위아래 패딩 넉넉히 */
+    gap: 20px;
 }
 .map * {color: #fff; font-size: 12px;}
 .map h3 {font-size: 15px; font-weight: 500; border-radius: 50px; border: 1px solid #fff; padding: 5px 10px;}
@@ -685,49 +715,6 @@
 /* 지도 사진 터치 가능하게 커서만 지정 */
 .map p img.map_img_popup {
     cursor: pointer;
-}
-
-/* 모달 전체 배경 */
-.modal_wrap {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100dvh;
-    background-color: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-/* 모달창 안의 확대된 이미지 */
-.modal_content {
-     width: 95%;
-    max-width: 1000px;
-    max-height: 85dvh;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-/* 닫기 버튼 */
-.modal_close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    border: none;
-    background: none; /* 배경 없음 */
-    color: #fff;
-    font-size: 35px;
-    cursor: pointer;
-}
-/* 🌟 모달 오픈 시 배경 고정용 공통 클래스 */
-body.body-fixed {
-    position: fixed;
-    width: 100%;
-    overflow: hidden;
-    touch-action: none;
 }
 /* ------------------------------------------------축하메세지 */
 .congrats_section {

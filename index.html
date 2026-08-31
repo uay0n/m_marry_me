@@ -20,343 +20,339 @@
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
-    <section class="first"> <!--  첫번째 문단 -->
-        <div class="top"> <!-- 메인상단 부분 -->
-            <div class="information"> <!-- 상단 장소, 날짜, 시간 정보 전달 -->
-                <p class="place">빌라드마리</p>
-                <p class="date">2026년 10월 17일 토요일</p>
-                <p class="time">오후 4시 50분</p>
-            </div><!-- e:information -->
-            <div class="name_heart">
-                <div class="name">
-                    <p class="marry_info" >We're Getting <span>Married</span></p>
-                    <div class="g_b">
-                        <div class="groom_name">
-                            <p class="groom">신랑</p>
-                            <p class="g_name">김태민</p>
+    <div class="mobile-container">
+        <section class="first"> <!--  첫번째 문단 -->
+            <div class="top"> <!-- 메인상단 부분 -->
+                <div class="information"> <!-- 상단 장소, 날짜, 시간 정보 전달 -->
+                    <p class="place">빌라드마리</p>
+                    <p class="date">2026년 10월 17일 토요일</p>
+                    <p class="time">오후 4시 50분</p>
+                </div><!-- e:information -->
+                <div class="name_heart">
+                    <div class="name">
+                        <p class="marry_info" >We're Getting <span>Married</span></p>
+                        <div class="g_b">
+                            <div class="groom_name">
+                                <p class="groom">신랑</p>
+                                <p class="g_name">김태민</p>
+                            </div>
+                            <div class="bride_name">
+                                <p class="bride">신부</p>
+                                <p class="b_name">우아연</p>
+                            </div>
                         </div>
-                        <div class="bride_name">
-                            <p class="bride">신부</p>
-                            <p class="b_name">우아연</p>
+                    </div><!-- e:name -->
+                    <div class="heart">
+                        <div class="heart_five"> <!-- 하트 -->
+                            <img src="./image/heart1.svg" alt="">
+                            <img src="./image/heart2.svg" alt="">
+                            <img src="./image/heart3.svg" alt="">
+                            <img src="./image/heart4.svg" alt="">
+                            <img src="./image/heart5.svg" alt="">
+                        </div><!-- e:heart_five -->
+                        <p class="famous_saying"> <!-- 꾸미기용 명언 -->
+                            Somewhere between <span>two hearts,</span><br>
+                            we found a little place to call home.<br>
+                            <span>We will grow like trees beside each other,</span><br>
+                            through every season, under the same sky.<br>
+                            And wherever life takes us,<br>
+                            <span>I hope we always find our way back home.</span>
+                        </p><!-- e:famous_saying -->
+                    </div><!-- e:heart -->
+                </div><!-- e:name_heart -->
+                <div class="word"> <!-- 상단 장소, 날짜, 시간 정보 전달 -->
+                    <p class="love">💍Love</p>
+                    <p class="together">🤵🏻‍♂️👰🏻Together</p>
+                    <p class="forever">🪽Forever</p>
+                </div><!-- e:word -->
+            </div><!-- e:top -->
+            <div class="bottom"> <!-- 하단 버튼 부분 -->
+                <button type="button" class="groom_letter"><span>🌳신랑</span> 태민의 편지</button>
+                <p class="flower"><img src="./image/flower1.svg" alt=""></p>
+                <button type="button" class="bride_letter"><span>🏠신부</span> 아연의 편지</button>
+            </div><!-- e:bottom -->
+                <!-- 신랑 편지 -->
+            <div class="letter_modal groom_modal">
+                <div class="letter_content">
+                    <button type="button" class="letter_close">×</button>
+                    <img src="./image/letter1.png" alt="">
+                </div>
+            </div>
+            <!-- 신부 편지 -->
+            <div class="letter_modal bride_modal">
+                <div class="letter_content">
+                    <button type="button" class="letter_close">×</button>
+                    <img src="./image/letter2.png" alt="">
+                </div>
+            </section><!-- e:main first -->
+            <section class="main insta_profile">
+                <!-- 스마트폰 상태바 영역 -->
+            <div class="status_bar">
+                <div class="time_area">
+                    <span>16:50</span>
+                    <span class="heart_icon"><img src="./image/heart_insta.svg" alt=""></span>
+                </div>
+                <div class="status_icons">
+                    <span class="signal"><img src="./image/cellular Connection.svg" alt=""></span>
+                    <span class="wifi"><img src="./image/wifi.svg" alt=""></span>
+                    <span class="battery"><img src="./image/battery.svg" alt=""></span>
+                </div>
+            </div>
+            <!-- 1. 상단 인스타 헤더 -->
+            <header class="profile_header">
+                <button type="button" class="menu_icon"><img src="./image/flower2.svg" alt=""></button> <!-- 혹은 아이콘 이미지 -->
+                <div class="username">
+                    <p>taemin</p>
+                    <img src="./image/heart_insta.svg" alt="">
+                    <p>ayeon</p>
+                </div>
+                <button type="button" class="settings_icon"><img src="./image/flower2.svg" alt=""></button>
+            </header>
+    
+            <!-- 2. 프로필 정보 영역 (사진 + 스탯) -->
+            <div class="profile_info_area">
+                <div class="profile_img_box">
+                    <div class="profile_img"></div>
+                </div>
+                <div class="profile_photo_modal">
+                    <button type="button" class="profile_photo_close">×</button>
+                    <img src="./image/insta_popup.jpg" alt="프로필 사진">
+                </div>
+                <div class="profile_stats">
+                    <div class="name_item">
+                        <span class="name">태민아연</span>
+                    </div>
+                    <div class="bottom">
+                        <div class="stat_item">
+                            <span class="num">2023</span>
+                            <span class="label">SINCE</span>
+                        </div>
+                        <div class="stat_item">
+                            <span class="num">2026</span>
+                            <span class="label">MARRY</span>
+                        </div>
+                        <div class="stat_item">
+                            <span class="num">∞</span>
+                            <span class="label">TOGETHER</span>
                         </div>
                     </div>
-                </div><!-- e:name -->
-                <div class="heart">
-                    <div class="heart_five"> <!-- 하트 -->
-                        <img src="./image/heart1.svg" alt="">
-                        <img src="./image/heart2.svg" alt="">
-                        <img src="./image/heart3.svg" alt="">
-                        <img src="./image/heart4.svg" alt="">
-                        <img src="./image/heart5.svg" alt="">
-                    </div><!-- e:heart_five -->
-                    <p class="famous_saying"> <!-- 꾸미기용 명언 -->
-                        Somewhere between <span>two hearts,</span><br>
-                        we found a little place to call home.<br>
-                        <span>We will grow like trees beside each other,</span><br>
-                        through every season, under the same sky.<br>
-                        And wherever life takes us,<br>
-                        <span>I hope we always find our way back home.</span>
-                    </p><!-- e:famous_saying -->
-                </div><!-- e:heart -->
-            </div><!-- e:name_heart -->
-            <div class="word"> <!-- 상단 장소, 날짜, 시간 정보 전달 -->
-                <p class="love">💍Love</p>
-                <p class="together">🤵🏻‍♂️👰🏻Together</p>
-                <p class="forever">🪽Forever</p>
-            </div><!-- e:word -->
-        </div><!-- e:top -->
-        <div class="bottom"> <!-- 하단 버튼 부분 -->
-            <button type="button" class="groom_letter"><span>🌳신랑</span> 태민의 편지</button>
-            <p class="flower"><img src="./image/flower1.svg" alt=""></p>
-            <button type="button" class="bride_letter"><span>🏠신부</span> 아연의 편지</button>
-        </div><!-- e:bottom -->
-        <!-- 신랑 편지 -->
-    <div class="letter_modal groom_modal">
-        <div class="letter_content">
-            <button type="button" class="letter_close">×</button>
-            <img src="./image/letter1.png" alt="">
-        </div>
-    </div>
-    <!-- 신부 편지 -->
-    <div class="letter_modal bride_modal">
-        <div class="letter_content">
-            <button type="button" class="letter_close">×</button>
-            <img src="./image/letter2.png" alt="">
-        </div>
-    </section><!-- e:main first -->
-    <section class="main insta_profile">
-        <!-- 스마트폰 상태바 영역 -->
-    <div class="status_bar">
-        <div class="time_area">
-            <span>16:50</span>
-            <span class="heart_icon"><img src="./image/heart_insta.svg" alt=""></span>
-        </div>
-        <div class="status_icons">
-            <span class="signal"><img src="./image/cellular Connection.svg" alt=""></span>
-            <span class="wifi"><img src="./image/wifi.svg" alt=""></span>
-            <span class="battery"><img src="./image/battery.svg" alt=""></span>
-        </div>
-    </div>
-    <!-- 1. 상단 인스타 헤더 -->
-    <header class="profile_header">
-        <button type="button" class="menu_icon"><img src="./image/flower2.svg" alt=""></button> <!-- 혹은 아이콘 이미지 -->
-        <div class="username">
-            <p>taemin</p>
-            <img src="./image/heart_insta.svg" alt="">
-            <p>ayeon</p>
-        </div>
-        <button type="button" class="settings_icon"><img src="./image/flower2.svg" alt=""></button>
-    </header>
-
-    <!-- 2. 프로필 정보 영역 (사진 + 스탯) -->
-    <div class="profile_info_area">
-        <div class="profile_img_box">
-            <div class="profile_img"></div>
-        </div>
-        <div class="profile_photo_modal">
-            <button type="button" class="profile_photo_close">×</button>
-            <img src="./image/insta_popup.jpg" alt="프로필 사진">
-        </div>
-        <div class="profile_stats">
-            <div class="name_item">
-                <span class="name">태민아연</span>
-            </div>
-            <div class="bottom">
-                <div class="stat_item">
-                    <span class="num">2023</span>
-                    <span class="label">SINCE</span>
-                </div>
-                <div class="stat_item">
-                    <span class="num">2026</span>
-                    <span class="label">MARRY</span>
-                </div>
-                <div class="stat_item">
-                    <span class="num">∞</span>
-                    <span class="label">TOGETHER</span>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- 3. 상태 메시지 / 소개글 -->
-    <div class="profile_bio">
-        <p>🤍 우리의 평범한 날들을 기록합니다</p>
-    </div>
-
-    <!-- 4. 프로필 버튼 (신랑소개 / 신부소개 / 하트) -->
-    <div class="profile_buttons">
-        <button type="button" class="btn_groom">신랑소개</button>
-        <button type="button" class="btn_bride">신부소개</button>
-        <p><img src="./image/heart_insta.svg" alt=""></p>
-    </div>
-
-    <div id="groomModal" class="intro_modal">
-        <div class="intro_modal_content">
-            <button type="button" class="close_btn">&times;</button>
-            <img src="./image/groom_intro.jpg" alt="">
-        </div>
-    </div>
-
-    <!-- 신부 소개 모달 -->
-    <div id="brideModal" class="intro_modal">
-        <div class="intro_modal_content">
-            <button type="button" class="close_btn">&times;</button>
-            <img src="./image/brider_intro.jpg" alt="">
-        </div>
-    </div>
-    <!-- 5. 스토리 하이라이트 (원형 아이콘 목록) -->
-    <div class="highlight_story">
-
-        <div class="story_item">
-            <div class="story_thumb story_new">
-                <span>+</span>
-            </div>
-            <span class="story_name">New</span>
-        </div>
-
-        <div class="story_item">
-            <div class="story_thumb story_2026" data-year="2026">
-                <div class="story_img"></div>
-            </div>
-            <span class="story_name">2026</span>
-        </div>
-
-        <div class="story_item">
-            <div class="story_thumb story_2025" data-year="2025">
-                <div class="story_img"></div>
-            </div>
-            <span class="story_name">2025</span>
-        </div>
-
-        <div class="story_item">
-            <div class="story_thumb story_2024" data-year="2024">
-                <div class="story_img"></div>
-            </div>
-            <span class="story_name">2024</span>
-        </div>
-
-        <div class="story_item">
-            <div class="story_thumb story_2023" data-year="2023">
-                <div class="story_img"></div>
-            </div>
-            <span class="story_name">2023</span>
-        </div>
-    </div>
-    <div class="highlight_modal">
-        <button type="button" class="highlight_close">×</button>
-        <div class="highlight_progress">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="highlight_slides">
-            <!-- JS가 사진을 넣어줌 -->
-        </div>
-    </div>
-    <!-- 6. 하단 사진 갤러리 그리드 (6분할 앨범) -->
-    <div class="photo_grid">
-        <div class="top">
-            <div class="grid_item"><img src="./image/full1.JPG" alt=""></div>
-            <div class="grid_item"><img src="./image/full2.jpg" alt=""></div>
-            <div class="grid_item"><img src="./image/full3.JPG" alt=""></div>
-        </div>
-        <div class="bottom">
-            <div class="grid_item"><img src="./image/full4.JPG" alt=""></div>
-            <div class="grid_item"><img src="./image/full5.jpg" alt=""></div>
-            <div class="grid_item"><img src="./image/full6.jpg" alt=""></div>
-        </div>
-    </div>
-    <!-- 사진 크게 보기 팝업 모달 -->
-    <div id="imageModal" class="modal">
-        <span class="close_btn">&times;</span>
-        <img class="modal_content" id="modalImg" alt="확대 사진">
-    </div>
-</section>
-<section class="map">
-    <div class="container">
-        <h3>오시는 길</h3>
-        <p><img src="./image/map.jpg" alt="map" class="map_img_popup"></p>
-        <div class="name_add">
-            <p class="hall_name">빌라드마리웨딩홀</p>
-            <p class="address">인천광역시 부평구 경원대로 1404(부평동 185-30)</p>
-        </div>
-        <div class="subway">
-            <div class="in_use">
-                <img src="./image/subway.svg" alt="">
-                <span>지하철 사용 시</span>
-            </div>
-            <div class="way">
-                <p class="title">1호선 부평역 하차</p>
-                <p class="content">• 북부광장 출구 도보 2분거리 (택시정류장에서 우측방향 12층 건물)</p>
-            </div>
-            <div class="way">
-                <p class="title">인천지하철 부평역 하차</p>
-                <p class="content">• 지하상가 11번 출구로 나오시면 오른편에 있습니다. (노벨약국, 청아보석 방향)</p>
-            </div>
-        </div> <!-- e:subway -->
-        <div class="bus">
-            <div class="in_use">
-                <img src="./image/bus.svg" alt="">
-                <span>버스 사용 시</span>
-            </div>
-            <div class="way">
-                <p class="content">• 88(경기버스), 11, 12, 43, 45, 46, 47, 302, 302B, 9500(시외버스)</p>
-            </div>
-        </div> <!-- e:bus -->
-        <div class="parking">
-            <div class="in_use">
-                <img src="./image/parking.svg" alt="">
-                <span>주차장 사용 시</span>
-            </div>
-            <div class="way">
-                <p class="content">• 지하 2~4층, 지상주차장(2시간 무료),500대 동시 주차 11층 연회장에서 차량번호 등록 후 출차하세요!</p>
-            </div>
-        </div> <!-- e:bus -->
-        <div class="wap_btns">
-            <!-- 네이버 지도 버튼 -->
-            <a href="https://naver.me/F3T82wZo" target="_blank" rel="noopener noreferrer" class="map_btn">
-                <img src="./image/naver.svg" alt="네이버" class="btn_icon">
-                <span>네이버지도</span>
-            </a>
     
-            <!-- 카카오 지도 버튼 -->
-            <a href="https://kko.to/rM_B8oM8Hf" target="_blank" rel="noopener noreferrer" class="map_btn">
-                <img src="./image/kakao.svg" alt="카카오" class="btn_icon">
-                <span>카카오지도</span>
-            </a>
+            <!-- 3. 상태 메시지 / 소개글 -->
+            <div class="profile_bio">
+                <p>🤍 우리의 평범한 날들을 기록합니다</p>
+            </div>
     
-            <!-- 구글 지도 버튼 -->
-            <a href="https://maps.app.goo.gl/VXN23CwdixTpHhrR6" target="_blank" rel="noopener noreferrer" class="map_btn">
-                <img src="./image/google.svg" alt="구글" class="btn_icon">
-                <span>구글지도</span>
-            </a>
-        </div>
-        <!-- 모달 추가 -->
-        <div id="mapModal" class="modal_wrap">
-            <span class="modal_close">&times;</span>
-            <img class="modal_content" id="modalImg" src="./image/map.jpg" alt="map">
-        </div>
+            <!-- 4. 프로필 버튼 (신랑소개 / 신부소개 / 하트) -->
+            <div class="profile_buttons">
+                <button type="button" class="btn_groom">신랑소개</button>
+                <button type="button" class="btn_bride">신부소개</button>
+                <p><img src="./image/heart_insta.svg" alt=""></p>
+            </div>
+    
+            <div id="groomModal" class="intro_modal">
+                <div class="intro_modal_content">
+                    <button type="button" class="close_btn">&times;</button>
+                    <img src="./image/groom_intro.jpg" alt="">
+                </div>
+            </div>
+    
+            <!-- 신부 소개 모달 -->
+            <div id="brideModal" class="intro_modal">
+                <div class="intro_modal_content">
+                    <button type="button" class="close_btn">&times;</button>
+                    <img src="./image/brider_intro.jpg" alt="">
+                </div>
+            </div>
+            <!-- 5. 스토리 하이라이트 (원형 아이콘 목록) -->
+            <div class="highlight_story">
+        
+                <div class="story_item">
+                    <div class="story_thumb story_new">
+                        <span>+</span>
+                    </div>
+                    <span class="story_name">New</span>
+                </div>
+        
+                <div class="story_item">
+                    <div class="story_thumb story_2026" data-year="2026">
+                        <div class="story_img"></div>
+                    </div>
+                    <span class="story_name">2026</span>
+                </div>
+        
+                <div class="story_item">
+                    <div class="story_thumb story_2025" data-year="2025">
+                        <div class="story_img"></div>
+                    </div>
+                    <span class="story_name">2025</span>
+                </div>
+        
+                <div class="story_item">
+                    <div class="story_thumb story_2024" data-year="2024">
+                        <div class="story_img"></div>
+                    </div>
+                    <span class="story_name">2024</span>
+                </div>
+        
+                <div class="story_item">
+                    <div class="story_thumb story_2023" data-year="2023">
+                        <div class="story_img"></div>
+                    </div>
+                    <span class="story_name">2023</span>
+                </div>
+            </div>
+            <div class="highlight_modal">
+                <button type="button" class="highlight_close">×</button>
+                <div class="highlight_progress">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="highlight_slides">
+                    <!-- JS가 사진을 넣어줌 -->
+                </div>
+            </div>
+            <!-- 6. 하단 사진 갤러리 그리드 (6분할 앨범) -->
+            <div class="photo_grid">
+                <div class="top">
+                    <div class="grid_item"><img src="./image/full1.JPG" alt=""></div>
+                    <div class="grid_item"><img src="./image/full2.jpg" alt=""></div>
+                    <div class="grid_item"><img src="./image/full3.JPG" alt=""></div>
+                </div>
+                <div class="bottom">
+                    <div class="grid_item"><img src="./image/full4.JPG" alt=""></div>
+                    <div class="grid_item"><img src="./image/full5.jpg" alt=""></div>
+                    <div class="grid_item"><img src="./image/full6.jpg" alt=""></div>
+                </div>
+            </div>
+            <!-- 사진 크게 보기 팝업 모달 -->
+            <div id="imageModal" class="modal">
+                <span class="close_btn">&times;</span>
+                <img class="modal_content" id="modalImg" alt="확대 사진">
+            </div>
+        </section>
+        <section class="map">
+            <div class="container">
+                <h3>오시는 길</h3>
+                <p><img src="./image/map.jpg" alt="map" class="map_img_popup"></p>
+                <div class="name_add">
+                    <p class="hall_name">빌라드마리웨딩홀</p>
+                    <p class="address">인천광역시 부평구 경원대로 1404(부평동 185-30)</p>
+                </div>
+                <div class="subway">
+                    <div class="in_use">
+                        <img src="./image/subway.svg" alt="">
+                        <span>지하철 사용 시</span>
+                    </div>
+                    <div class="way">
+                        <p class="title">1호선 부평역 하차</p>
+                        <p class="content">• 북부광장 출구 도보 2분거리 (택시정류장에서 우측방향 12층 건물)</p>
+                    </div>
+                    <div class="way">
+                        <p class="title">인천지하철 부평역 하차</p>
+                        <p class="content">• 지하상가 11번 출구로 나오시면 오른편에 있습니다. (노벨약국, 청아보석 방향)</p>
+                    </div>
+                </div> <!-- e:subway -->
+                <div class="bus">
+                    <div class="in_use">
+                        <img src="./image/bus.svg" alt="">
+                        <span>버스 사용 시</span>
+                    </div>
+                    <div class="way">
+                        <p class="content">• 88(경기버스), 11, 12, 43, 45, 46, 47, 302, 302B, 9500(시외버스)</p>
+                    </div>
+                </div> <!-- e:bus -->
+                <div class="parking">
+                    <div class="in_use">
+                        <img src="./image/parking.svg" alt="">
+                        <span>주차장 사용 시</span>
+                    </div>
+                    <div class="way">
+                        <p class="content">• 지하 2~4층, 지상주차장(2시간 무료),500대 동시 주차 11층 연회장에서 차량번호 등록 후 출차하세요!</p>
+                    </div>
+                </div> <!-- e:bus -->
+                <div class="wap_btns">
+                    <!-- 네이버 지도 버튼 -->
+                    <a href="https://naver.me/F3T82wZo" target="_blank" rel="noopener noreferrer" class="map_btn">
+                        <img src="./image/naver.svg" alt="네이버" class="btn_icon">
+                        <span>네이버지도</span>
+                    </a>
+            
+                    <!-- 카카오 지도 버튼 -->
+                    <a href="https://kko.to/rM_B8oM8Hf" target="_blank" rel="noopener noreferrer" class="map_btn">
+                        <img src="./image/kakao.svg" alt="카카오" class="btn_icon">
+                        <span>카카오지도</span>
+                    </a>
+            
+                    <!-- 구글 지도 버튼 -->
+                    <a href="https://maps.app.goo.gl/VXN23CwdixTpHhrR6" target="_blank" rel="noopener noreferrer" class="map_btn">
+                        <img src="./image/google.svg" alt="구글" class="btn_icon">
+                        <span>구글지도</span>
+                    </a>
+                </div>
+        </section>
+        <!-- 축하 메시지 섹션 -->
+        <section class="congrats_section">
+            <div class="congrats_content">
+                <h2>CONGRATULATIONS</h2>
+                <p>두 사람에게 마음을 전해 주세요.</p>
+                <a href="https://forms.gle/QtZZ71tHajc14QWA8" target="_blank" class="congrats_btn">
+                    축하 메시지 남기기
+                    <img src="./image/arrrow.svg" alt="">
+                </a>
+            </div>
+        </section>
+        <section class="account_section">
+            <div class="account_content">
+                <h2>마음 전하실 곳</h2>
+                <div class="account_group">
+                    <h3>🤵🏻 신랑<span>측 계좌번호</span></h3>
+                    <button type="button" class="account_toggle"><span>신랑 김태민</span><span>＋</span></button>
+                    <div class="account_info">
+                        <p>기업은행 558-026531-01-011</p>
+                        <button type="button" class="copy_btn">복사</button>
+                    </div>
+                    <button type="button" class="account_toggle"><span>신랑 아버지 김주산</span><span>＋</span></button>
+                    <div class="account_info">
+                        <p>신협 010-3997-6624</p>
+                        <button type="button" class="copy_btn">복사</button>
+                    </div>
+                </div>
+                <div class="account_group">
+                    <h3>👰🏻‍♀️ 신부<span>측 계좌번호</span></h3>
+                    <button type="button" class="account_toggle"><span>신부 우아연</span><span>＋</span></button>
+                    <div class="account_info">
+                        <p>카카오뱅크 3333-02-4486799</p>
+                        <button type="button" class="copy_btn">복사</button>
+                    </div>
+                    <button type="button" class="account_toggle"><span>신부 아버지 김덕영</span><span>＋</span></button>
+                    <div class="account_info">
+                        <p>수협 137-62-105111</p>
+                        <button type="button" class="copy_btn">복사</button>
+                    </div>
+                    <button type="button" class="account_toggle"><span>신부 어머니 양미순</span><span>＋</span></button>
+                    <div class="account_info">
+                        <p>수협 111-02-141126</p>
+                        <button type="button" class="copy_btn">복사</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="last">
+            <!-- 반투명 그림자 오버레이가 들어간 배경 영역 -->
+            <div class="shadow_overlay">
+                <div class="footer_content">
+                    <p class="title">Our story continues.</p>
+                    <p>저희의 소중한 날에<br>함께해주셔서 감사합니다.</p>
+                    <p><span>신랑</span>김태민·<span>신부</span>우아연</p>
+                    <p class="uay">© 2026 Designed & created by Uayeon.<br>본 모바일 청첩장의 디자인 및 콘텐츠는 직접 제작하였으며,<br>사진 및 콘텐츠의 무단 캡처·저장·복제·사용을 금합니다.</p>
+                </div>
+            </div>
+        </footer>
     </div>
-</section>
-<!-- 축하 메시지 섹션 -->
-<section class="congrats_section">
-    <div class="congrats_content">
-        <h2>CONGRATULATIONS</h2>
-        <p>두 사람에게 마음을 전해 주세요.</p>
-        <a href="https://forms.gle/QtZZ71tHajc14QWA8" target="_blank" class="congrats_btn">
-            축하 메시지 남기기
-            <img src="./image/arrrow.svg" alt="">
-        </a>
-    </div>
-</section>
-<section class="account_section">
-    <div class="account_content">
-        <h2>마음 전하실 곳</h2>
-        <div class="account_group">
-            <h3>🤵🏻 신랑<span>측 계좌번호</span></h3>
-            <button type="button" class="account_toggle"><span>신랑 김태민</span><span>＋</span></button>
-            <div class="account_info">
-                <p>기업은행 558-026531-01-011</p>
-                <button type="button" class="copy_btn">복사</button>
-            </div>
-            <button type="button" class="account_toggle"><span>신랑 아버지 김주산</span><span>＋</span></button>
-            <div class="account_info">
-                <p>신협 010-3997-6624</p>
-                <button type="button" class="copy_btn">복사</button>
-            </div>
-        </div>
-        <div class="account_group">
-            <h3>👰🏻‍♀️ 신부<span>측 계좌번호</span></h3>
-            <button type="button" class="account_toggle"><span>신부 우아연</span><span>＋</span></button>
-            <div class="account_info">
-                <p>카카오뱅크 3333-02-4486799</p>
-                <button type="button" class="copy_btn">복사</button>
-            </div>
-            <button type="button" class="account_toggle"><span>신부 아버지 김덕영</span><span>＋</span></button>
-            <div class="account_info">
-                <p>수협 137-62-105111</p>
-                <button type="button" class="copy_btn">복사</button>
-            </div>
-            <button type="button" class="account_toggle"><span>신부 어머니 양미순</span><span>＋</span></button>
-            <div class="account_info">
-                <p>수협 111-02-141126</p>
-                <button type="button" class="copy_btn">복사</button>
-            </div>
-        </div>
-    </div>
-</section>
-<footer class="last">
-    <!-- 반투명 그림자 오버레이가 들어간 배경 영역 -->
-    <div class="shadow_overlay">
-        <div class="footer_content">
-            <p class="title">Our story continues.</p>
-            <p>저희의 소중한 날에<br>함께해주셔서 감사합니다.</p>
-            <p><span>신랑</span>김태민·<span>신부</span>우아연</p>
-            <p class="uay">© 2026 Designed & created by Uayeon.<br>본 모바일 청첩장의 디자인 및 콘텐츠는 직접 제작하였으며,<br>사진 및 콘텐츠의 무단 캡처·저장·복제·사용을 금합니다.</p>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
