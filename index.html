@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="김태민 ♥ 우아연 결혼식에 초대합니다">
     <meta property="og:description" content="2026년 10월 17일 토요일 오후, 빌라드마리에서 우리의 시작을 함께해 주세요.">
-    <meta property="og:image" content="./image/main_bg.jpg"> <!-- 대표 이미지 경로로 수정해주세요! -->
+    <meta property="og:image" content="https://uay0n.github.io/m_marry_me/image/main_bg.jpg">
     <meta property="og:url" content="https://uay0n.github.io/m_marry_me/"> <!-- 실제 배포하실 주소로 수정해주세요! -->
 
     <title>김태민♥️우아연 결혼식에 초대합니다</title>
@@ -20,6 +20,8 @@
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
+    <button type="button" class="music_btn">🎵</button>
+    <audio id="bgm" src="./music/wedding.mp3.mp3"></audio>
     <div class="mobile-container">
         <section class="first"> <!--  첫번째 문단 -->
             <div class="top"> <!-- 메인상단 부분 -->
@@ -100,13 +102,13 @@
             </div>
             <!-- 1. 상단 인스타 헤더 -->
             <header class="profile_header">
-                <button type="button" class="menu_icon"><img src="./image/flower2.svg" alt=""></button> <!-- 혹은 아이콘 이미지 -->
+                <p class="menu_icon"><img src="./image/flower2.svg" alt=""></p> <!-- 혹은 아이콘 이미지 -->
                 <div class="username">
                     <p>taemin</p>
                     <img src="./image/heart_insta.svg" alt="">
                     <p>ayeon</p>
                 </div>
-                <button type="button" class="settings_icon"><img src="./image/flower2.svg" alt=""></button>
+                <p type="button" class="settings_icon"><img src="./image/flower2.svg" alt=""></p>
             </header>
     
             <!-- 2. 프로필 정보 영역 (사진 + 스탯) -->

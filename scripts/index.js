@@ -255,3 +255,17 @@ copyButtons.forEach((button) => {
         }
     });
 });
+
+//노래 재생
+const musicBtn = document.querySelector('.music_btn');
+const bgm = document.getElementById('bgm');
+
+musicBtn.addEventListener('click', () => {
+    if (bgm.paused) {
+        bgm.play();
+        musicBtn.textContent = '🔇';
+    } else {
+        bgm.pause();
+        musicBtn.textContent = '🎵';
+    }
+});
