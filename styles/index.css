@@ -1,9 +1,10 @@
 /* 모바일 청첩장 ccs */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 /* --------------------------------------------------(메인/사진 부분)1행 */
 /* 첫 번째 메인 섹션 */
 .first {
     background: url(../image/main_bg.jpg); background-size: cover; background-position: center;
-    width: 100%; min-height: 100 dvh;
+    width: 100%; min-height: 100dvh;
     display: flex; flex-flow: column nowrap; align-items: center;
     justify-content: center; padding: 50px; gap: 10px;
 }
@@ -38,7 +39,7 @@
     
 }
 .first .name .marry_info {
-    font-size:  8px; padding: 2px 5px; border: 0.5px solid #fff;
+    font-size:  8px; padding: 2px 5px; border: 1px solid #fff;
     border-radius: 20px; display: inline-block; margin-bottom: 10px;
 }
 .first .name p span {font-weight: 800; font-size: 8px; }
@@ -141,7 +142,40 @@
         transform: scale(1.04); /* 중간에 살짝 커짐 (원하시면 1.03~1.05 사이로 조절 가능) */
     }
 }
+@keyframes mainFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.first .information {
+    animation: mainFadeUp 0.8s ease forwards;
+}
+
+.first .name {
+    opacity: 0;
+    animation: mainFadeUp 0.8s ease 0.2s forwards;
+}
+
+.first .heart {
+    opacity: 0;
+    animation: mainFadeUp 0.8s ease 0.4s forwards;
+}
+
+.first .word {
+    opacity: 0;
+    animation: mainFadeUp 0.8s ease 0.6s forwards;
+}
+
+.first .bottom {
+    opacity: 0;
+    animation: mainFadeUp 0.8s ease 0.8s forwards;
+}
 /* 2. 신랑/신부 편지 버튼 클래스에 애니메이션 적용 */
 /* 만약 버튼 클래스 이름이 다르다면 아래 선택자만 본인 코드에 맞게 수정해 주세요! */
 .groom_letter, .bride_letter {
@@ -155,34 +189,31 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh; /* 또는 100dvh */
-    background: rgba(0, 0, 0, 0.8); /* 어두운 그림자 배경을 화면 전체에 꽉 채움 */
-    
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.9); /* 배경 더 어둡게 꽉 채우기 */
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* 다른 요소들보다 맨 위에 오도록 설정 */
+    z-index: 99999;
 }
 
-/* 편지 */
+/* 편지 박스 화면 전체 꽉 채우기 */
 .letter_content {
     position: relative;
-    width: auto;
-    height: auto;
-    max-width: 90%;
-    max-height: 80vh;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-/* 편지 이미지 */
+/* 편지 이미지 화면 가득 채우기 (찌그러짐 방지하며 꽉 채움) */
 .letter_content img {
     display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 핵심: 여백 없이 화면에 꽉 채우기 */
 }
-
 /* 닫기 버튼 */
 .letter_close {
     position: absolute;
@@ -209,6 +240,7 @@
     display: flex; flex-flow: row nowrap;
     padding: 20px 40px; justify-content: space-between;
 }
+.insta_profile .status_bar .time_area {display: flex; gap: 2px; justify-content: center;}
 .insta_profile .status_bar .time_area span {font-size: 15px; font-weight: 700;}
 .insta_profile .profile_info_area {/* 프로필 + 이름부분 */
     display: flex; align-items: center;
@@ -293,7 +325,10 @@
 .insta_profile .profile_buttons {
     display: flex; padding: 0 20px; gap: 5px; height: 30px;
 }
-.insta_profile .profile_header h1 {font-size: 20px; font-weight: 700;}
+.insta_profile .profile_header .username  {display: flex;justify-content: center;} /* 상단 태민아연 */
+.insta_profile .profile_header .username p {font-size: 15px; font-weight: 700;} /* 상단 태민아연 */
+.profile_info_area .profile_stats .name_item .name {font-size: 15px;} /* 프로필 태민아연 */
+.profile_info_area .profile_stats .bottom * {font-size: 15px;} /* 프로필 년도   */
 /* 신랑소개, 신부소개 버튼 */
 .btn_groom, .btn_bride {
     flex: 1; /* 두 버튼이 남은 공간을 반반씩 공평하게 차지 */
@@ -680,9 +715,183 @@
 .modal_close {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 20px;
+    border: none;
+    background: none; /* 배경 없음 */
     color: #fff;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 35px;
     cursor: pointer;
+}
+/* 🌟 모달 오픈 시 배경 고정용 공통 클래스 */
+body.body-fixed {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+}
+/* ------------------------------------------------축하메세지 */
+.congrats_section {
+    position: relative;
+    width: 100%;
+    height: 250px; /* 요청하신 대략적인 높이 */
+    background: url('../image/conga_bg.jpg') no-repeat center 95% / cover; /* 배경 이미지 경로에 맞게 수정하세요 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    gap: 20px;
+}
+
+/* 어두운 오버레이 처리 (배경 사진 위 글씨가 잘 보이도록) */
+.congrats_section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.congrats_content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.congrats_content h2 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.congrats_content p {
+    font-size: 15px;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* 버튼 디자인 */
+.congrats_btn {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+}
+
+.congrats_btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* -----------------------------------계좌 */
+.account_section {
+    background-color: #f3eee5;
+    width: 100%;
+    padding: 30px;
+}
+.account_content {
+    width: 100%; display: flex; flex-flow: column; justify-content: center; align-items: center;
+}
+.account_content h2 {color: #474747; font-size: 15px; font-weight: 600;}
+.account_group{ 
+    margin-top: 30px;
+    width: 100%;
+}
+.account_group * {color: #474747;}
+.account_group h3 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.account_group h3 span {font-weight: 400; font-size: 15px;}
+.account_toggle {
+    width: 100%;
+    padding: 18px 0;
+    border: none;
+    border-bottom: 1px solid #474747;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+.account_toggle span {letter-spacing: -1px; font-size: 15px;}
+.account_info {
+    display: none;
+    padding: 20px;
+    background: #f3eee5;
+}
+.account_info p {letter-spacing: -1px; font-size: 15px;}
+.account_info.active {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.account_info.active .copy_btn {
+    background-color: #DED7CC;
+    padding: 5px 10px;
+    color: #5F5A52;
+    font-weight: 700;
+    font-size: 10px;
+    border-radius: 5px;
+}
+.last {
+    position: relative;
+    width: 100%;
+    height: 186px; /* 요청하신 세로 높이 고정 */
+    background: url('../image/main_bg.jpg') no-repeat center 70% / cover;
+}
+
+/* 사진 위에 얹을 반투명 검은색 그림자 오버레이 */
+.shadow_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 숫자가 클수록 어두워짐 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* 텍스트 정렬 및 스타일 */
+.footer_content {display: flex; flex-flow: column; gap: 10px;}
+.footer_content * {color: #fff;}
+.footer_content p {
+    font-size: 15px;
+    line-height: 1.0;
+    margin-bottom: 4px;
+    letter-spacing: -1px;
+}
+
+.footer_content .title {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+}
+
+.footer_content span {
+    margin-right: 2px;
+    font-weight: 700;
+}
+
+.footer_content .uay {
+    font-size: 10px;
+    margin-top: 8px;
+    opacity: 0.7;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 400;
 }

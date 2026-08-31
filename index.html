@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="김태민 ♥ 우아연 결혼식에 초대합니다">
     <meta property="og:description" content="2026년 10월 17일 토요일 오후, 빌라드마리에서 우리의 시작을 함께해 주세요.">
-    <meta property="og:image" content="./images/wedding_thumb.jpg"> <!-- 대표 이미지 경로로 수정해주세요! -->
+    <meta property="og:image" content="../image/main_bg.jpg"> <!-- 대표 이미지 경로로 수정해주세요! -->
     <meta property="og:url" content="https://yourwebsite.com"> <!-- 실제 배포하실 주소로 수정해주세요! -->
 
     <title>김태민♥️우아연 결혼식에 초대합니다</title>
@@ -89,7 +89,7 @@
     <div class="status_bar">
         <div class="time_area">
             <span>16:50</span>
-            <span class="heart_icon">❤</span>
+            <span class="heart_icon"><img src="./image/heart_insta.svg" alt=""></span>
         </div>
         <div class="status_icons">
             <span class="signal"><img src="./image/cellular Connection.svg" alt=""></span>
@@ -100,7 +100,11 @@
     <!-- 1. 상단 인스타 헤더 -->
     <header class="profile_header">
         <button type="button" class="menu_icon"><img src="./image/flower2.svg" alt=""></button> <!-- 혹은 아이콘 이미지 -->
-        <h1 class="username">taemin❤ayeon</h1>
+        <div class="username">
+            <p>taemin</p>
+            <img src="./image/heart_insta.svg" alt="">
+            <p>ayeon</p>
+        </div>
         <button type="button" class="settings_icon"><img src="./image/flower2.svg" alt=""></button>
     </header>
 
@@ -110,9 +114,9 @@
             <div class="profile_img"></div>
         </div>
         <div class="profile_photo_modal">
-        <button type="button" class="profile_photo_close">×</button>
-        <img src="./image/instabtn.jpg" alt="프로필 사진">
-</div>
+            <button type="button" class="profile_photo_close">×</button>
+            <img src="./image/insta_popup.jpg" alt="프로필 사진">
+        </div>
         <div class="profile_stats">
             <div class="name_item">
                 <span class="name">태민아연</span>
@@ -143,13 +147,13 @@
     <div class="profile_buttons">
         <button type="button" class="btn_groom">신랑소개</button>
         <button type="button" class="btn_bride">신부소개</button>
-        <p>❤</p>
+        <p><img src="./image/heart_insta.svg" alt=""></p>
     </div>
 
     <div id="groomModal" class="intro_modal">
         <div class="intro_modal_content">
             <button type="button" class="close_btn">&times;</button>
-            <img src="./image/groom_intro.png" alt="">
+            <img src="./image/groom_intro.jpg" alt="">
         </div>
     </div>
 
@@ -157,7 +161,7 @@
     <div id="brideModal" class="intro_modal">
         <div class="intro_modal_content">
             <button type="button" class="close_btn">&times;</button>
-            <img src="./image/brider_intro.png" alt="">
+            <img src="./image/brider_intro.jpg" alt="">
         </div>
     </div>
     <!-- 5. 스토리 하이라이트 (원형 아이콘 목록) -->
@@ -233,7 +237,7 @@
 <section class="map">
     <div class="container">
         <h3>오시는 길</h3>
-        <p><img src="./image/map.png" alt="map" class="map_img_popup"></p>
+        <p><img src="./image/map.jpg" alt="map" class="map_img_popup"></p>
         <div class="name_add">
             <p class="hall_name">빌라드마리웨딩홀</p>
             <p class="address">인천광역시 부평구 경원대로 1404(부평동 185-30)</p>
@@ -292,9 +296,67 @@
         <!-- 모달 추가 -->
         <div id="mapModal" class="modal_wrap">
             <span class="modal_close">&times;</span>
-            <img class="modal_content" id="modalImg" src="./image/map.png" alt="map">
+            <img class="modal_content" id="modalImg" src="./image/map.jpg" alt="map">
         </div>
     </div>
 </section>
+<!-- 축하 메시지 섹션 -->
+<section class="congrats_section">
+    <div class="congrats_content">
+        <h2>CONGRATULATIONS</h2>
+        <p>두 사람에게 마음을 전해 주세요.</p>
+        <a href="https://forms.gle/QtZZ71tHajc14QWA8" target="_blank" class="congrats_btn">
+            축하 메시지 남기기
+            <img src="./image/arrrow.svg" alt="">
+        </a>
+    </div>
+</section>
+<section class="account_section">
+    <div class="account_content">
+        <h2>마음 전하실 곳</h2>
+        <div class="account_group">
+            <h3>🤵🏻 신랑<span>측 계좌번호</span></h3>
+            <button type="button" class="account_toggle"><span>신랑 김태민</span><span>＋</span></button>
+            <div class="account_info">
+                <p>기업은행 558-026531-01-011</p>
+                <button type="button" class="copy_btn">복사</button>
+            </div>
+            <button type="button" class="account_toggle"><span>신랑 아버지 김주산</span><span>＋</span></button>
+            <div class="account_info">
+                <p>신협 010-3997-6624</p>
+                <button type="button" class="copy_btn">복사</button>
+            </div>
+        </div>
+        <div class="account_group">
+            <h3>👰🏻‍♀️ 신부<span>측 계좌번호</span></h3>
+            <button type="button" class="account_toggle"><span>신부 우아연</span><span>＋</span></button>
+            <div class="account_info">
+                <p>카카오뱅크 3333-02-4486799</p>
+                <button type="button" class="copy_btn">복사</button>
+            </div>
+            <button type="button" class="account_toggle"><span>신부 아버지 김덕영</span><span>＋</span></button>
+            <div class="account_info">
+                <p>수협 137-62-105111</p>
+                <button type="button" class="copy_btn">복사</button>
+            </div>
+            <button type="button" class="account_toggle"><span>신부 어머니 양미순</span><span>＋</span></button>
+            <div class="account_info">
+                <p>수협 111-02-141126</p>
+                <button type="button" class="copy_btn">복사</button>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="last">
+    <!-- 반투명 그림자 오버레이가 들어간 배경 영역 -->
+    <div class="shadow_overlay">
+        <div class="footer_content">
+            <p class="title">Our story continues.</p>
+            <p>저희의 소중한 날에<br>함께해주셔서 감사합니다.</p>
+            <p><span>신랑</span>김태민·<span>신부</span>우아연</p>
+            <p class="uay">© 2026 Designed & created by Uayeon.<br>본 모바일 청첩장의 디자인 및 콘텐츠는 직접 제작하였으며,<br>사진 및 콘텐츠의 무단 캡처·저장·복제·사용을 금합니다.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
