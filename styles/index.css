@@ -642,7 +642,6 @@ body {
     position: relative;
     width: 100%;
     min-height: 100dvh;
-    overflow: hidden;
     z-index: 0;
 }
 .map .map_img_wrap {
