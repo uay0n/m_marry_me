@@ -163,7 +163,7 @@ body {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.04); /* 중간에 살짝 커짐 (원하시면 1.03~1.05 사이로 조절 가능) */
+        transform: scale(1.1); /* 중간에 살짝 커짐 (원하시면 1.03~1.05 사이로 조절 가능) */
     }
 }
 @keyframes mainFadeUp {
