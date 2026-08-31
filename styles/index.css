@@ -26,7 +26,7 @@ body {
 /* 첫 번째 메인 섹션 */
 .first {
     background: url(../image/main_bg.jpg); background-size: cover; background-position: center;
-    width: 100%; 
+    width: 100%; min-height: 100vh;
     display: flex; flex-flow: column nowrap; align-items: center;
     justify-content: center; padding: 50px; gap: 10px;
     box-sizing: border-box;height: 100vh;
@@ -700,21 +700,21 @@ body {
 .map p img {width: 100%;}
 .map .hall_name {font-weight: 700; text-align: center;}
 .map .address {margin-bottom: 20px; text-align: center;}
-.map .subway {border: 0.5px solid #fff; width: 100%; padding: 5px;}
+.map .subway {border: 0.5px solid #fff; width: 100%; padding: 10px;}
 .map .subway .in_use {display: flex; justify-content: center; align-items: center; gap: 5px;}
 .map .subway .in_use span {font-weight: 700;}
-.map .subway .way {padding: 5px 20px;}
+.map .subway .way {padding: 5px 20px 0 20px;}
 .map .subway .way .title {font-weight: 700; margin-bottom: 5px;}
 .map .subway .way .content {}
-.map .bus {border: 0.5px solid #fff; width: 100%; padding: 5px;}
+.map .bus {border: 0.5px solid #fff; width: 100%; padding: 10px;}
 .map .bus .in_use {display: flex; justify-content: center; align-items: center; gap: 5px;}
 .map .bus .in_use span {font-weight: 700;}
-.map .bus .way {padding: 5px 20px;}
+.map .bus .way {padding: 5px 20px 0 20px;}
 .map .bus .way .content {}
-.map .parking {border: 0.5px solid #fff; width: 100%; padding: 5px;}
+.map .parking {border: 0.5px solid #fff; width: 100%; padding: 10px;}
 .map .parking .in_use {display: flex; justify-content: center; align-items: center; gap: 5px;}
 .map .parking .in_use span {font-weight: 700;}
-.map .parking .way {padding: 5px 20px;}
+.map .parking .way {padding: 5px 20px 0 20px;}
 .map .parking .way .content {line-height: 1.5;}
 .map .wap_btns {display: flex; gap: 10px;}
 .map .wap_btns .map_btn {
