@@ -26,9 +26,11 @@ body {
 /* 첫 번째 메인 섹션 */
 .first {
     background: url(../image/main_bg.jpg); background-size: cover; background-position: center;
-    width: 100%; min-height: 100dvh;
+    width: 100%; 
     display: flex; flex-flow: column nowrap; align-items: center;
     justify-content: center; padding: 50px; gap: 10px;
+    box-sizing: border-box;height: 100vh;
+    min-height: 100vh;
 }
 
 /* 메인 상단 영역 */
@@ -140,7 +142,7 @@ body {
 .first .bottom {
     background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); border-radius: 20px; width: 100%; max-width: 380px;
-    height: 62px; padding: 20px 0 20px 0; display: flex; flex-flow: row;
+    height: 62px; display: flex; flex-flow: row;
     justify-content: center; align-items: center; padding: 20px 0; gap: 10px;
 }
 .first .bottom * {color: #fff; font-size: 11px;}
@@ -205,76 +207,61 @@ body {
     transform-origin: center;
 }
 /* ----------------------------------------------------------------- */
-/* 편지 모달 (화면 전체를 덮되, 박스 안에서 뜨게 하려면 position을 absolute나 fixed로 조절) */
+/* 1. 모달 배경의 패딩을 완전히 없애서 벽면에 딱 붙임 */
 .letter_modal {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100dvh; /* 사파리 하단 주소창 맞춤 */
+    width: 100vw;
+    height: 100dvh;
     background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
-    padding: 0; /* 양옆 빈 공간이 생기지 않도록 패딩 제거 */
-    box-sizing: border-box;
+    z-index: 9999;
+    padding: 0; /* 여백 제로! */
+    margin: 0;
 }
 
-/* 편지 박스 가로 폭 꽉 채우기 */
-/* 편지 모달 배경 */
-/* 1. 배경 모달은 브라우저 전체를 꽉 채우게 복구 */
-/* 편지 모달 전체 (애니메이션 밖으로 나왔으니 완벽히 덮습니다) */
-.letter_modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999; /* 제일 위로! */
-}
-
-/* 편지 박스 */
+/* 2. 편지 박스 크기 제한을 풀고 화면 가로 폭에 꽉 채움 */
 .letter_content {
     position: relative;
-    width: 90%;
-    max-width: 400px;
+    width: 100%; /* 화면 가로 폭 100% 채우기 */
+    max-width: none; /* 제한 풀기 */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* 편지 이미지 */
+/* 3. 이미지 자체를 찌그러짐 없이 화면 가로에 시원하게 밀착 */
 .letter_content img {
-    width: 100%;
+    width: 100%; /* 두 번째 사진처럼 가로 폭에 꽉 차게 */
     height: auto;
-    max-height: 85dvh;
+    max-height: 100dvh;
     object-fit: contain;
     display: block;
-    border-radius: 8px;
+    border-radius: 0; /* 꽉 차게 만들 때는 모서리 둥글기 제거가 깔끔합니다 */
 }
 
-/* 닫기 버튼 */
+/* 4. 닫기 버튼이 화면 밖으로 나가거나 찌그러지지 않게 우측 상단 고정 */
 .letter_close {
-    position: absolute;
-    top: -40px; /* 이미지 바깥 위쪽에 깔끔하게 배치 */
-    right: 0;
-    width: 32px;
-    height: 32px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     font-size: 20px;
-    line-height: 32px;
-    text-align: center;
+    border: none;
     cursor: pointer;
-    z-index: 100000;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* ----------------------------------------2열 */
 /* 4. 프로필 버튼 영역 (신랑소개 / 신부소개 / 하트) */
@@ -301,7 +288,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 99999;
+    z-index: 9999;
 
     background: rgba(0, 0, 0, 0.9);
 
@@ -377,7 +364,7 @@ body {
     height: 32px;
     border-radius: 6px;
     font-size: 13px;
-    font-weight: 00;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -393,7 +380,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
+    z-index: 9999;
     justify-content: center;
     align-items: center;
 }
@@ -535,7 +522,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 99999;
+    z-index: 9999;
     background: rgba(0, 0, 0, 0.95);
 }
 .highlight_modal.active {
@@ -569,7 +556,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 100001;
+    z-index: 9999;
     border: none;
     background: none;
     color: #fff;
@@ -581,7 +568,7 @@ body {
     top: 12px;
     left: 10px;
     right: 10px;
-    z-index: 100000;
+    z-index: 9999;
     display: flex;
     gap: 4px;
 }
@@ -918,7 +905,7 @@ border-radius:50%;
 background:rgba(0,0,0,0.5);
 color:#fff;
 font-size:18px;
-z-index:999999;
+z-index:1000;
 display:flex;
 justify-content:center;
 align-items:center;
